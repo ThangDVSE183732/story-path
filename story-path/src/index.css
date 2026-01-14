@@ -1,29 +1,62 @@
-@import "tailwindcss";
 
-@layer components {
-  /* Khung hình bậc thang lớn */
-  .frame-stepped {
-    clip-path: polygon(
-      0% 20px, 20px 20px, 20px 0%, 
-      calc(100% - 20px) 0%, calc(100% - 20px) 20px, 100% 20px, 
-      100% calc(100% - 20px), calc(100% - 20px) calc(100% - 20px), calc(100% - 20px) 100%, 
-      20px 100%, 20px calc(100% - 20px), 0% calc(100% - 20px)
-    );
-  }
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
 
-  /* Khung hình bậc thang nhỏ */
-  .frame-stepped-sm {
-    clip-path: polygon(
-      0% 10px, 10px 10px, 10px 0%, 
-      calc(100% - 10px) 0%, calc(100% - 10px) 10px, 100% 10px, 
-      100% calc(100% - 10px), calc(100% - 10px) calc(100% - 10px), calc(100% - 10px) 100%, 
-      10px 100%, 10px calc(100% - 10px), 0% calc(100% - 10px)
-    );
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .animate-fade-in {
-    animation: fadeIn 1s ease-out forwards;
-  }
+:root {
+  font-family: 'Cormorant Garamond', serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #0a0a0a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #a89968;
+  text-decoration: inherit;
+  transition: all 0.3s ease;
+}
+a:hover {
+  color: #d4c499;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+
+h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: #d4c499;
+}
+
+h2, h3 {
+  font-family: 'Cinzel', serif;
+  color: #d4c499;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
 }
 
 @keyframes fadeIn {
