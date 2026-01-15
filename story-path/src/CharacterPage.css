@@ -1,0 +1,122 @@
+/* Reset & Full Screen */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.character-page {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  transition: background 1.2s ease-in-out;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Background Variants */
+.bg-forest { background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.7)), url('./pictures/1.jpg'); }
+.bg-mountain { background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.7)), url('./pictures/2.jpg'); }
+.bg-castle { background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.7)), url('./pictures/3.jpg'); }
+.bg-cave { background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.7)), url('./pictures/4.jpg'); }
+.bg-lake { background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.7)), url('./pictures/5.jpg'); }
+.bg-ocean { background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.7)), url('./pictures/6.jpg'); }
+
+.full-screen-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 4rem;
+}
+
+/* Header */
+.header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo { width: 45px; height: 45px; border-radius: 50%; position: absolute; left: 50%; transform: translateX(-50%); }
+.header-line { flex: 1; height: 1px; background: linear-gradient(to right, #5a5550, transparent); }
+
+/* Main Content Area */
+.main-layout {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8vw;
+  transition: 0.4s ease-in-out;
+}
+
+.fade-in { opacity: 1; transform: scale(1); }
+.fade-out { opacity: 0; transform: scale(0.98); }
+
+.info-box { flex: 0 1 400px; }
+.character-name { font-family: 'Cinzel', serif; font-size: 3.5rem; color: #c4b998; margin-bottom: 0.5rem; }
+.character-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: #a89968; font-style: italic; margin-bottom: 1.5rem; }
+.character-description { color: #8a8580; font-size: 1.05rem; line-height: 1.6; }
+
+.portrait-frame { position: relative; width: 280px; height: 400px; }
+.portrait-img { width: 100%; height: 100%; object-fit: cover; clip-path: url(#frameClipPath); }
+.svg-border { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+
+/* Journey Footer - 6 Items Row */
+.journey-footer {
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.journey-row {
+  display: flex;
+  gap: 25px;
+  align-items: flex-end; /* Quan trọng: để các hình nhỏ và to cùng nằm trên 1 trục dưới */
+}
+
+.journey-item {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hình không chọn: Nhỏ hơn */
+.journey-item.inactive {
+  transform: scale(0.7);
+  opacity: 0.4;
+  filter: grayscale(100%);
+}
+
+.journey-item.inactive:hover {
+  opacity: 0.8;
+  filter: grayscale(20%);
+  transform: scale(0.8);
+}
+
+/* Hình được chọn: To hơn */
+.journey-item.active {
+  transform: scale(1.1);
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.thumb-container { position: relative; width: 90px; height: 120px; }
+.thumb-img { width: 100%; height: 100%; object-fit: cover; clip-path: url(#frameClipPath); }
+.thumb-svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.thumb-name {
+  margin-top: 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  color: #a89968;
+  letter-spacing: 1px;
+}
+
+.decorative-line {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #5a5550, #a89968, #5a5550, transparent);
+  margin-top: 15px;
+}
