@@ -60,7 +60,7 @@ function CharacterPage({ onBack, onGoToContent, onGoToQuiz }) {
             <p className="character-description">{current.desc}</p>
             
             <div className="action-buttons">
-              <button className="btn-action primary" onClick={() => onGoToContent(current.id)}>
+              <button className="btn-action primary" onClick={() => onGoToContent(current)}>
                 Nội dung chi tiết
               </button>
              <button 
