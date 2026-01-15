@@ -63,9 +63,12 @@ function CharacterPage({ onBack, onGoToContent, onGoToQuiz }) {
               <button className="btn-action primary" onClick={() => onGoToContent(current.id)}>
                 Nội dung chi tiết
               </button>
-              <button className="btn-action secondary" onClick={() => onGoToQuiz(current.id)}>
-                Quiz
-              </button>
+             <button 
+                  className="btn-action secondary" 
+                  onClick={() => onGoToQuiz(current)} 
+                >
+                  Quiz
+                </button>
             </div>
           </div>
 
@@ -88,8 +91,6 @@ function CharacterPage({ onBack, onGoToContent, onGoToQuiz }) {
                 <div className="thumb-container">
                   <img src={stages[key].image} alt={key} className="thumb-img" />
                   <FrameSVG className="thumb-svg" size="small" />
-                  
-     
                 </div>
                 <span className="thumb-name">{stages[key].name}</span>
               </div>
