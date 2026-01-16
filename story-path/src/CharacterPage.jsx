@@ -13,67 +13,60 @@ function CharacterPage({
   initialStage = 'Stage1',
   onStageChange
 }) {
+  // Đã sửa: Chuyển thành chữ 'stages' thường để đồng bộ với code bên dưới
   const stages = {
     Stage1: {
       id: 'merlin',
-      name: 'Sự tất yếu & Vai trò của Đảng',
-      title: '',
+      name: 'Sự Ra Đời Của Đảng',
+      title: 'Sự tất yếu & Vai trò lãnh đạo',
       bg: 'bg-forest',
       image: 'https://i.pinimg.com/736x/89/ca/4b/89ca4bb279d861de352644d5cbf1074a.jpg',
-      desc:
-        'Khẳng định Đảng là nhân tố quyết định thắng lợi, ra đời từ sự kết hợp giữa chủ nghĩa Mác - Lênin với phong trào công nhân và yêu nước.'
+      desc: 'Khẳng định Đảng là nhân tố quyết định thắng lợi, ra đời từ sự kết hợp giữa chủ nghĩa Mác - Lênin với phong trào công nhân và yêu nước.'
     },
 
     Stage2: {
       id: 'arthur',
-      name: 'Bản chất Đảng Văn Minh',
-      title: '',
+      name: 'Đảng Văn Minh',
+      title: 'Bản chất & Nguyên tắc hoạt động',
       bg: 'bg-mountain',
       image: 'https://i.pinimg.com/736x/ef/66/2f/ef662f401a39b312846792caea80aad9.jpg',
-      desc:
-        'Khám phá tư tưởng "Đảng là đạo đức, là văn minh" cùng 8 nguyên tắc xây dựng Đảng kiểu mới để giữ vững bản chất cách mạng.'
+      desc: 'Khám phá tư tưởng "Đảng là đạo đức, là văn minh" cùng 8 nguyên tắc xây dựng Đảng kiểu mới để giữ vững bản chất cách mạng.'
     },
 
     Stage3: {
       id: 'lancelot',
-      name: 'Công tác Cán bộ & Đảng viên',
-      title: '',
+      name: 'Cái Gốc Công Việc',
+      title: 'Xây dựng đội ngũ Cán bộ',
       bg: 'bg-castle',
-      image:
-        'https://media.baobinhphuoc.com.vn/Content/UploadFiles/EditorFiles/images/2017/Quy4/ccc26102017105816.jpg',
-      desc:
-        'Tập trung vào tư tưởng "Cán bộ là cái gốc của mọi công việc", tiêu chuẩn Đức - Tài và rèn luyện tư cách người cách mạng.'
+      image: 'https://media.baobinhphuoc.com.vn/Content/UploadFiles/EditorFiles/images/2017/Quy4/ccc26102017105816.jpg',
+      desc: 'Tập trung vào tư tưởng "Cán bộ là cái gốc của mọi công việc", tiêu chuẩn Đức - Tài và rèn luyện tư cách người cách mạng.'
     },
 
     Stage4: {
       id: 'galahad',
-      name: 'Nhà nước của Dân, do Dân, vì Dân',
-      title: '',
+      name: 'Chủ Quyền Nhân Dân',
+      title: 'Nhà nước của, do, vì Dân',
       bg: 'bg-cave',
       image: 'https://cdn.cungcap.net/media/img/2019/04/15/ncG7c-1555272912.jpeg',
-      desc:
-        'Làm rõ bản chất nhà nước dân chủ, nơi tất cả quyền lực thuộc về nhân dân và cán bộ đóng vai trò là "công bộc" trung thành.'
+      desc: 'Làm rõ bản chất nhà nước dân chủ, nơi tất cả quyền lực thuộc về nhân dân và cán bộ đóng vai trò là "công bộc" trung thành.'
     },
 
     Stage5: {
       id: 'percival',
-      name: 'Pháp quyền & Kiểm soát quyền lực',
-      title: '',
+      name: 'Pháp Quyền Nhân Nghĩa',
+      title: 'Pháp luật & Kiểm soát quyền lực',
       bg: 'bg-lake',
       image: img5,
-      desc:
-        'Xây dựng nhà nước thượng tôn pháp luật gắn liền với đạo đức và các biện pháp quyết liệt phòng chống "giặc nội xâm".'
+      desc: 'Xây dựng nhà nước thượng tôn pháp luật gắn liền với đạo đức và các biện pháp quyết liệt phòng chống "giặc nội xâm".'
     },
 
     Stage6: {
       id: 'tristan',
-      name: 'Vận dụng & Đổi mới hiện nay',
-      title: '',
+      name: 'Đổi Mới Hiện Nay',
+      title: 'Vận dụng trong giai đoạn mới',
       bg: 'bg-ocean',
-      image:
-        'https://i.vnask.com/Data/image/2021/04/10/tho-bac-ho-thieu-nhi-1.jpg',
-      desc:
-        'Kiên định mục tiêu độc lập dân tộc và CNXH, đồng thời đổi mới phương thức lãnh đạo của Đảng trong bối cảnh thời đại mới.'
+      image: 'https://i.vnask.com/Data/image/2021/04/10/tho-bac-ho-thieu-nhi-1.jpg',
+      desc: 'Kiên định mục tiêu độc lập dân tộc và CNXH, đồng thời đổi mới phương thức lãnh đạo của Đảng trong bối cảnh thời đại mới.'
     }
   };
 
@@ -90,7 +83,7 @@ function CharacterPage({
       setCurrentKey(key);
       setIsExiting(false);
       onStageChange?.(key);
-    }, 400); // thời gian khớp với animation CSS
+    }, 400); 
   };
 
   const current = stages[currentKey];
@@ -102,7 +95,7 @@ function CharacterPage({
       <div className="full-screen-container">
         <header className="header">
           <div className="header-left">
-            <div className="menu-text" onClick={onBack}>Trở về</div>
+            <div className="menu-text" onClick={onBack} style={{cursor: 'pointer'}}>Trở về</div>
             <div className="header-line"></div>
           </div>
           <div className="header-right">
