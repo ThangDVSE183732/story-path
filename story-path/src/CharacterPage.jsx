@@ -6,7 +6,7 @@ import FrameSVG from './components/FrameSVG';
 import FrameClipPath from './components/FrameClipPath';
 
 // Import 6 ảnh tương ứng 6 chặng
-import img1 from './pictures/1.jpg';
+
 import img2 from './pictures/2.jpg';
 import img3 from './pictures/3.jpg';
 import img4 from './pictures/4.jpg';
@@ -15,7 +15,7 @@ import img6 from './pictures/6.jpg';
 
 function CharacterPage({ onBack }) {
   const stages = {
-    Stage1: { name: 'Merlin', title: 'The Prophet', bg: 'bg-forest', image: img1, desc: 'Merlin is the Soul of Britain, and he is Immortal.' },
+    Stage1: { name: 'Merlin', title: 'The Prophet', bg: 'bg-forest', image: 'https://i.pinimg.com/1200x/fc/32/26/fc32266830b9511b7deb930f284e2dd5.jpg', desc: 'Merlin is the Soul of Britain, and he is Immortal.' },
     Stage2: { name: 'Avallach', title: 'The Wise Elder', bg: 'bg-mountain', image: img2, desc: 'Ancient guardian of the old ways, keeper of forgotten knowledge.' },
     Stage3: { name: 'Morgian', title: 'The Mystic', bg: 'bg-castle', image: img3, desc: 'A fierce protector of the realm, wielding both blade and magic.' },
     Stage4: { name: 'Pelleas', title: 'The Shadow', bg: 'bg-cave', image: img4, desc: 'A mysterious figure bound by ancient oaths and dark secrets.' },
